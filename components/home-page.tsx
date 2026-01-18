@@ -64,7 +64,7 @@ export function HomePage() {
                 </a>
               </Button>
               <Button asChild variant="ghost">
-                <a href="public\cv.pdf" download>
+                <a href="/public/cv.pdf" download>
                   Download CV
                   <Download size={16} />
                 </a>
