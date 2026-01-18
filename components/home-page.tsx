@@ -102,7 +102,7 @@ export function HomePage() {
           <div className="rounded-3xl border border-border bg-card/90 p-8 shadow-[0_0_0_1px_rgba(45,212,191,0.08)] backdrop-blur">
             <h2 className="text-2xl font-semibold">Proof</h2>
             <p className="mt-3 text-muted-foreground">
-              Recruiter-friendly proof with a focus on traceability, reliability, and clear delivery.
+              Recruiter friendly proof with a focus on traceability, reliability, and clear delivery.
             </p>
             <div className="mt-4 grid gap-4 text-sm text-muted-foreground sm:grid-cols-2">
               {profile.differentiators.map((item) => (
@@ -182,7 +182,7 @@ export function HomePage() {
             <div>
               <h2 className="text-2xl font-semibold">Contact</h2>
               <p className="mt-2 text-muted-foreground">
-                Open for part-time roles, hybrid teams, and freelance assignments.
+                Open for part time roles, hybrid teams, and freelance assignments.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -204,7 +204,7 @@ export function HomePage() {
         </Section>
 
         <footer className="mt-16 text-center text-xs text-muted-foreground">
-          Zet je beste repositories vast op GitHub en link ze direct vanuit deze pagina.
+          © {new Date().getFullYear()} Matin Khajehfard. All rights reserved.
         </footer>
       </div>
     </div>

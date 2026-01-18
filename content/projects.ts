@@ -19,8 +19,8 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "EKB-AI (AAI EKB) — PDF-to-Vector Semantic Search",
-    oneLiner: "PDF-to-FAISS semantic search with traceable sources and multilingual processing.",
+    title: "EKB AI — PDF to Vector Semantic Search",
+    oneLiner: "PDF to FAISS semantic search with traceable sources and multilingual processing.",
     role: "Builder — pipeline, retrieval logic, and operational guardrails.",
     stack: [
       "Python",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
       "PyTorch",
     ],
     bullets: [
-      "Extracted text and tables from PDFs and created FAISS vector stores for semantic search with page-level traceability.",
+      "Extracted text and tables from PDFs and created FAISS vector stores for semantic search with page level traceability.",
       "Implemented chunking with overlap, configurable retrieval parameters, NL↔EN processing, and incremental updates.",
     ],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/EKB-AI" }],
@@ -43,8 +43,8 @@ export const projects: Project[] = [
   },
   {
     title: "VoteVision — Dutch Election Results Viewer",
-    oneLiner: "Full-stack viewer for Dutch election results with discussion flows.",
-    role: "Full-stack developer — results UI, moderation flows, and testing.",
+    oneLiner: "Full stack viewer for Dutch election results with discussion flows.",
+    role: "Full stack developer — results UI, moderation flows, and testing.",
     stack: ["Vue", "Spring Boot", "MySQL", "Render", "Cypress"],
     bullets: [
       "Built election results exploration (region, party, candidate) plus discussion flows.",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     stack: ["STIBO STEP", "JavaScript business rules", "Event processing", "STEP Web UI"],
     bullets: [
       "Implemented event-driven change logging and snapshot diff to generate structured audit entries.",
-      "Built per-object and aggregated Web UI views for searchable audit inspection and debugging.",
+      "Built per object and aggregated Web UI views for searchable audit inspection and debugging.",
     ],
     links: [{ label: "Repo", note: "Private (available on request)" }],
     featured: true,
@@ -74,11 +74,11 @@ export const projects: Project[] = [
   {
     title: "Gshop (LucaStars Webshop)",
     oneLiner: "Course webshop with full-stack modules and auth flows.",
-    role: "Full-stack developer — APIs, auth, and testing setup.",
+    role: "Full stack developer — APIs, auth, and testing setup.",
     stack: ["TypeScript", "Lit", "Express", "MySQL", "JWT", "Vitest"],
     bullets: [
       "Implemented full-stack modules with shared types and structured API layers.",
-      "Set up JWT auth flows and documentation-ready project structure.",
+      "Set up JWT auth flows and documentation ready project structure.",
     ],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Gshop" }],
     repo: "https://github.com/Bloody-BadAim/Gshop",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
   {
     title: "Dokkie — Shared Expenses",
     oneLiner: "Event expense tracker with relational data modeling.",
-    role: "Full-stack developer — data model and UI flow.",
+    role: "Full stack developer — data model and UI flow.",
     stack: ["TypeScript", "Vite", "MySQL"],
     bullets: [
       "Designed relational data model for events, participants, and payments.",
@@ -101,8 +101,8 @@ export const projects: Project[] = [
   },
   {
     title: "Code Exchange — Q&A Platform",
-    oneLiner: "Stack Overflow-style platform concept for structured knowledge sharing.",
-    role: "Full-stack developer — feature planning and implementation.",
+    oneLiner: "Stack Overflow style platform concept for structured knowledge sharing.",
+    role: "Full stack developer — feature planning and implementation.",
     stack: ["TypeScript", "Vite"],
     bullets: [
       "Shaped Q&A flows with tags, moderation-ready UX, and profile features.",

@@ -3,16 +3,16 @@ export const profile = {
   location: "Hoofddorp, Netherlands",
   roles: ["Software Engineer", "Fullstack Developer", "AI/Automation Engineer"],
   valueProposition:
-    "I build debuggable full-stack and automation systems: Vue/TypeScript frontends, Node/Java APIs, SQL data models, and evidence-backed delivery.",
+    "I build debuggable full stack and automation systems: Vue/TypeScript frontends, Node/Java APIs, SQL data models, and evidence backed delivery.",
   email: "kh.matin21@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/in/matin-khajehfard",
     github: "https://github.com/Bloody-BadAim",
   },
-  preferences: ["Part-time", "Hybrid", "Early-stage teams", "Open to freelance", "Open to 2027 internship"],
+  preferences: ["Part time", "Hybrid", "Open to freelance", "Open to 2027 internship"],
   differentiators: [
     "Built event-driven audit trail and Web UI reporting in STIBO STEP (Fluor internship).",
-    "Built PDF-to-FAISS semantic search pipeline with HuggingFace embeddings and NL↔EN processing (EKB-AI).",
+    "Built PDF to FAISS semantic search pipeline with HuggingFace embeddings and NL↔EN processing (EKB AI).",
     "Program lead AI Marathon 2025–2026: 7 labs, 9 events, 9 study associations.",
     "Built and operated systems with traceability, structured logging, and repeatable workflows.",
   ],
@@ -52,7 +52,7 @@ export const profile = {
   },
   experience: [
     "Fluor (Sep 2025 – Jan 2026): Implemented audit trail, snapshot diff, structured logs, Web UI views in STIBO STEP for PDM pipelines.",
-    "AI Marathon (Apr 2025 – Present): Led multi-stakeholder AI event program (7 labs, 9 events, 9 associations).",
+    "AI Marathon (Apr 2025 – Present): Led multi stakeholder AI event program (7 labs, 9 events, 9 associations).",
     "SIT board (Sep 2024 – Sep 2026): Student initiatives, events, sponsorship outreach.",
   ],
 };
