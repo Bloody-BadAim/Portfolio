@@ -48,7 +48,7 @@ export const profile = {
     testing: ["Cypress", "Vitest", "Git", "ESLint", "Render (deployment)"],
   },
   leadership: {
-    title: "AI4HvA — Community Builder | AI Marathon — Program Lead (CoE Applied AI)",
+    title: "AI4HvA Community Builder | AI Marathon Program Lead (CoE Applied AI)",
     details:
       "Built AI4HvA community infrastructure and launched AI Marathon: a repeatable intake to execution model that matches HvA AI labs with study associations. Delivered templates, scoping workflow, event blueprints, and Responsible AI framing so events ship consistently.",
     metrics: ["7 labs", "9 events", "9 study associations (2025–2026)"],

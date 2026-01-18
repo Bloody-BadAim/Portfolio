@@ -259,7 +259,7 @@ export function HomePage() {
               <div>
                 <h2 className="text-2xl font-semibold">Get in touch</h2>
                 <p className="mt-2 text-muted-foreground">
-                  Open for part time roles, hybrid teams, freelance work, and a 2027 internship.
+                  Open for part time roles, hybrid teams, freelance work or a 2027 internship.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">

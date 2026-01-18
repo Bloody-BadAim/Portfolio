@@ -30,7 +30,7 @@ export const getProjectSlug = (project: Project | string) => {
 
 export const projects: Project[] = [
   {
-    title: "EKB AI — PDF to Vector Semantic Search",
+    title: "EKB AI | PDF to Vector Semantic Search",
     oneLiner: "Semantic PDF search with traceable sources and bilingual NL↔EN retrieval.",
     role: "Owner, end to end implementation (ingestion, chunking, retrieval, operations).",
     stack: [
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     order: 1,
   },
   {
-    title: "VoteVision — Dutch Election Results Viewer",
+    title: "VoteVision | Dutch Election Results Viewer",
     oneLiner: "Election results explorer with moderated discussions and deployment ready flows.",
     role: "Team project (4). Full stack developer (results UI, moderation flows, E2E testing).",
     stack: ["Vue", "Spring Boot", "MySQL", "Render", "Cypress"],
@@ -73,14 +73,14 @@ export const projects: Project[] = [
     ],
     highlights: ["E2E tested flows", "Moderation tooling", "Region/party filters", "Deployment-ready setup"],
     results: ["Reliable election results browsing", "Moderation ready discussion space"],
-    gallery: [],
+    gallery: ["/images/VoteVision.png","/images/VoteVision2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Election" }],
     repo: "https://github.com/Bloody-BadAim/Election",
     featured: true,
     order: 2,
   },
   {
-    title: "Fluor — PDM Audit Trail / Change History (STIBO STEP)",
+    title: "Fluor | PDM Audit Trail / Change History (STIBO STEP)",
     oneLiner: "Event driven audit trail and change history for enterprise PDM objects in STIBO STEP.",
     role: "Internship project owner (business rules, event processing, Web UI views, data model).",
     stack: ["STIBO STEP", "JavaScript business rules", "Event processing", "STEP Web UI"],
@@ -108,14 +108,14 @@ export const projects: Project[] = [
     ],
     highlights: ["Shared type contracts", "JWT auth flows", "Test ready structure"],
     results: ["Consistent frontend backend contracts"],
-    gallery: [],
+    gallery: ["/images/Gshop.png","/images/Gshop2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Gshop" }],
     repo: "https://github.com/Bloody-BadAim/Gshop",
     featured: true,
     order: 4,
   },
   {
-    title: "Dokkie — Shared Expenses",
+    title: "Dokkie | Shared Expenses",
     oneLiner: "Shared expenses tracker with relational modeling and clear balance views.",
     role: "Full stack developer (data model and UI flow).",
     stack: ["TypeScript", "Vite", "MySQL"],
@@ -125,14 +125,14 @@ export const projects: Project[] = [
     ],
     highlights: ["Relational expense model", "Balance tracking UI", "Predictable data flow"],
     results: ["Clear shared expense visibility"],
-    gallery: ["/images/linkedin.jpeg"],
+    gallery: ["/images/Dokkie.png","/images/Dokkie2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Dokkie" }],
     repo: "https://github.com/Bloody-BadAim/Dokkie",
     featured: false,
     order: 5,
   },
   {
-    title: "Code Exchange — Q&A Platform",
+    title: "Code Exchange | Q&A Platform",
     oneLiner: "Q&A platform concept with tagging and moderation ready UX patterns.",
     role: "Full stack developer (feature planning and implementation).",
     stack: ["TypeScript", "Vite"],
@@ -142,10 +142,38 @@ export const projects: Project[] = [
     ],
     highlights: ["Tag driven discovery", "Moderation ready UX", "Scaffolded data flows"],
     results: ["Structured knowledge sharing experience"],
-    gallery: [],
+    gallery: ["/images/Codex.png","/images/Codex2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Code-exchange" }],
     repo: "https://github.com/Bloody-BadAim/Code-exchange",
     featured: false,
     order: 6,
   },
+{
+  title: "AdvGame | Text based adventure game",
+  oneLiner:
+    "Course team project: browser based text adventure with choice driven progression and a polished animated UI.",
+  role:
+    "Team project (SE Block 3). Developer: game flow/state, UI interactions, and animation integration.",
+  stack: ["JavaScript", "TypeScript", "HTML/CSS", "GSAP", "ESLint", "MkDocs", "CI (GitLab config)"],
+  bullets: [
+    "Built a choice driven flow for a text adventure, structuring scenes and transitions in a maintainable way.",
+    "Integrated UI motion and interaction feedback (animations/transitions) to make the game feel responsive and readable.",
+    "Kept the project developer friendly with TypeScript configuration, linting, and documentation/CI scaffolding.",
+  ],
+  highlights: [
+    "Choice driven flow",
+    "Animated UI",
+    "TypeScript config",
+    "Docs + CI scaffolding",
+  ],
+  results: [
+    "Playable text based adventure prototype",
+    "Reusable structure for scenes/choices and UI transitions",
+  ],
+  gallery: ["/images/Adv.png","/images/Adv2.png"],
+  links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/AdvGame" }],
+  repo: "https://github.com/Bloody-BadAim/AdvGame",
+  featured: false,
+  order: 7,
+},
 ];
