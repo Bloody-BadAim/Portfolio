@@ -1,0 +1,58 @@
+export const profile = {
+  name: "Matin Khajehfard",
+  location: "Hoofddorp, Netherlands",
+  roles: ["Software Engineer", "Fullstack Developer", "AI/Automation Engineer"],
+  valueProposition:
+    "I build debuggable full-stack and automation systems: Vue/TypeScript frontends, Node/Java APIs, SQL data models, and evidence-backed delivery.",
+  email: "kh.matin21@gmail.com",
+  links: {
+    linkedin: "https://www.linkedin.com/in/matin-khajehfard",
+    github: "https://github.com/Bloody-BadAim",
+  },
+  preferences: ["Part-time", "Hybrid", "Early-stage teams", "Open to freelance", "Open to 2027 internship"],
+  differentiators: [
+    "Built event-driven audit trail and Web UI reporting in STIBO STEP (Fluor internship).",
+    "Built PDF-to-FAISS semantic search pipeline with HuggingFace embeddings and NL↔EN processing (EKB-AI).",
+    "Program lead AI Marathon 2025–2026: 7 labs, 9 events, 9 study associations.",
+    "Built and operated systems with traceability, structured logging, and repeatable workflows.",
+  ],
+  skills: {
+    frontend: ["Vue.js", "TypeScript", "JavaScript", "HTML/CSS", "Vite"],
+    backend: [
+      "Node.js",
+      "Express",
+      "NestJS",
+      "Java (Spring Boot)",
+      "REST APIs",
+      "PostgreSQL",
+      "MySQL",
+      "Prisma",
+      "JWT",
+      "OAuth",
+      "Sessions",
+    ],
+    ai: [
+      "Python",
+      "FAISS",
+      "HuggingFace embeddings",
+      "LangChain",
+      "Chunking/overlap",
+      "Metadata traceability",
+      "pdfplumber",
+      "pandas",
+      "Argos Translate",
+      "PyTorch",
+    ],
+    automation: ["n8n", "Power Automate", "Zapier", "Webhooks", "Retries/validation patterns"],
+    testing: ["Cypress", "Vitest", "Git", "ESLint", "Render (deployment)"],
+  },
+  leadership: {
+    title: "AI Marathon (HvA Applied AI) — Program Lead",
+    details: "2025–2026 program with 7 labs, 9 events, and 9 study associations.",
+  },
+  experience: [
+    "Fluor (Sep 2025 – Jan 2026): Implemented audit trail, snapshot diff, structured logs, Web UI views in STIBO STEP for PDM pipelines.",
+    "AI Marathon (Apr 2025 – Present): Led multi-stakeholder AI event program (7 labs, 9 events, 9 associations).",
+    "SIT board (Sep 2024 – Sep 2026): Student initiatives, events, sponsorship outreach.",
+  ],
+};
