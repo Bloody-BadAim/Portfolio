@@ -82,7 +82,7 @@ export function HomePage() {
           >
             <div className="rounded-[28px] border border-border bg-card/80 p-3 shadow-glow">
               <Image
-                src="/images/portrait-placeholder.svg"
+                src="/images/linkedin.jpeg"
                 alt="Portret van Matin Khajehfard"
                 width={520}
                 height={520}
