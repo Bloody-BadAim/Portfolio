@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Matin Khajehfard | Fullstack Developer | AI Engineer",
   description:
     "Fullstack developer en AI engineer met focus op traceability, betrouwbare delivery en productkwaliteit.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://portfolio-etercx1n4-bloody-badaims-projects.vercel.app"),
   openGraph: {
     title: "Matin Khajehfard | Fullstack Developer | AI Engineer",
     description:
       "Fullstack developer en AI engineer met focus op traceability, betrouwbare delivery en productkwaliteit.",
-    url: "https://example.com",
+    url: "https://portfolio-etercx1n4-bloody-badaims-projects.vercel.app",
     siteName: "Matin Khajehfard",
     images: [
       {
