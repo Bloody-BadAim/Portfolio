@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matin Khajehfard | Fullstack Developer | AI Engineer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      integrity="sha512-b7QpXG7iqrJsl8N8nStMc6kOp+Ybkq1q9j2nC7gE1u4lfVBPuGd9VtGm7H9t3p2x66hg0A3pbyROnA9HNfT3OQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f1f5f9;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #0f766e;
+        --accent-strong: #0b4f4a;
+        --card: #ffffff;
+        --border: #e2e8f0;
+        --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        --glow: 0 0 0 1px rgba(15, 118, 110, 0.15), 0 18px 60px rgba(15, 118, 110, 0.2);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at top, #f8fafc, #e2e8f0 55%, #cbd5f5 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        z-index: -1;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        filter: blur(40px);
+        opacity: 0.35;
+        animation: float 12s ease-in-out infinite;
+      }
+      body::before {
+        background: #38bdf8;
+        top: -120px;
+        right: -120px;
+      }
+      body::after {
+        background: #34d399;
+        bottom: -160px;
+        left: -120px;
+        animation-delay: -6s;
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 64px 20px 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        animation: page-fade 700ms ease-out both;
+      }
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 28px;
+        align-items: center;
+      }
+      .tagline {
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+      .photo-card {
+        position: relative;
+        border-radius: 24px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        box-shadow: var(--glow);
+        overflow: hidden;
+      }
+      .photo-card img {
+        display: block;
+        width: 100%;
+        border-radius: 18px;
+        object-fit: cover;
+      }
+      .photo-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        pointer-events: none;
+        animation: shimmer 6s linear infinite;
+      }
+      h1 {
+        font-size: 2.6rem;
+        margin: 0;
+      }
+      h2 {
+        font-size: 1.4rem;
+        margin: 0 0 12px;
+      }
+      p {
+        margin: 0;
+      }
+      .role {
+        color: var(--muted);
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+      .links {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        box-shadow: var(--shadow);
+        transition: transform 200ms ease, box-shadow 200ms ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+      }
+      .projects {
+        display: grid;
+        gap: 20px;
+      }
+      .project-meta {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .stack {
+        display: inline-block;
+        background: #e0f2f1;
+        color: #134e4a;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .snapshot {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: var(--muted);
+      }
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .section-title::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, var(--accent), #38bdf8);
+        display: inline-block;
+      }
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .pill {
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #f1f5f9;
+        color: var(--accent-strong);
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+      footer {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+      @media (max-width: 640px) {
+        h1 {
+          font-size: 2rem;
+        }
+        main {
+          padding: 40px 18px 64px;
+        }
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @keyframes page-fade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes rise-in {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(18px);
+        }
+      }
+      @keyframes shimmer {
+        0% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 0.2;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="animate__animated animate__fadeInDown">
+        <div class="hero-grid">
+          <div class="hero">
+            <h1>Matin Khajehfard</h1>
+            <p class="role">Fullstack Developer | AI Engineer</p>
+            <p class="tagline">7+ jaar bouwen aan web, AI en automation met focus op traceability, debugbaarheid en shipping.</p>
+            <div class="pill-row">
+              <span class="pill">Hoofddorp, NL</span>
+              <span class="pill">Part-time · Hybrid</span>
+              <span class="pill">Freelance open</span>
+            </div>
+          </div>
+          <div class="photo-card" data-aos="zoom-in" data-aos-duration="800">
+            <img src="assets/matin.jpg" alt="Portret van Matin Khajehfard" />
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/matin-khajehfard" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/Bloody-BadAim" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:kh.matin21@gmail.com">Mail</a>
+        </div>
+      </header>
+
+      <section class="card" data-aos="fade-up">
+        <h2 class="section-title">Proof block</h2>
+        <p>Ik bouw fullstack en AI-oplossingen met event-driven logging, traceability en duidelijke systemen.</p>
+        <p>Impact: betrouwbare delivery, herleidbare changes en operationele rust voor teams.</p>
+      </section>
+
+      <section>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Top 3 projecten</h2>
+        <div class="projects">
+          <article class="card" data-aos="fade-up" data-aos-delay="150">
+            <h3>PDM Audit Trail / Change History (Fluor)</h3>
+            <p class="project-meta">Audit trail pipeline voor PDM-objecten met per-object en aggregated web UI views.</p>
+            <span class="stack">Stack: STIBO STEP · JavaScript business rules · Event processing · STEP Web UI</span>
+            <ul>
+              <li>Probleem: enterprise PDM had onduidelijke logging en beperkte traceability.</li>
+              <li>Mijn bijdrage: event-driven audit logging, snapshot diff logic en UI-configuratie gebouwd.</li>
+            </ul>
+            <p class="project-meta">Resultaat: reproduceerbare change history en betere operational debugging.</p>
+            <div class="links">
+              <a href="https://github.com/Bloody-BadAim" target="_blank" rel="noreferrer">Repo (pinned)</a>
+              <span class="project-meta">Demo: intern (niet publiek)</span>
+              <span class="project-meta">Screenshots: intern</span>
+            </div>
+          </article>
+
+          <article class="card" data-aos="fade-up" data-aos-delay="250">
+            <h3>AAI EKB (EKB-AI) — PDF-to-Vector Semantic Search</h3>
+            <p class="project-meta">PDF ingest pipeline met FAISS vector store en traceable bronnen.</p>
+            <span class="stack">Stack: Python · LangChain · FAISS · HuggingFace · pdfplumber · PyTorch</span>
+            <ul>
+              <li>Probleem: versnipperde PDF-kennis zonder betrouwbare semantic search.</li>
+              <li>Mijn bijdrage: extractie, chunking, metadata, meertalige verwerking en vector updates.</li>
+            </ul>
+            <p class="project-meta">Resultaat: consistente retrieval met herleidbare bronnen per pagina.</p>
+            <div class="links">
+              <a href="https://github.com/Bloody-BadAim" target="_blank" rel="noreferrer">Repo (pinned)</a>
+              <span class="project-meta">Demo: repo scripts</span>
+              <span class="project-meta">Screenshots: repo README</span>
+            </div>
+          </article>
+
+          <article class="card" data-aos="fade-up" data-aos-delay="350">
+            <h3>VoteVision — Dutch Election Results Viewer</h3>
+            <p class="project-meta">Full-stack web app voor verkiezingsresultaten en gemodereerde discussies.</p>
+            <span class="stack">Stack: Vue · Java Spring Boot · MySQL · Render · Cypress</span>
+            <ul>
+              <li>Probleem: inzicht in resultaten en discussieflow ontbrak in één platform.</li>
+              <li>Mijn bijdrage: results UI, forum features, deployment en E2E testing setup.</li>
+            </ul>
+            <p class="project-meta">Resultaat: complete end-to-end app met duidelijke setup en deployment.</p>
+            <div class="links">
+              <a href="https://github.com/Bloody-BadAim" target="_blank" rel="noreferrer">Repo (pinned)</a>
+              <span class="project-meta">Demo: Render deployment</span>
+              <span class="project-meta">Screenshots: repo docs</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" data-aos="fade-up">
+        <h2 class="section-title">Experience snapshot</h2>
+        <div class="snapshot">
+          <p>Fluor — Automation Specialist / Software Engineer Intern (2025-2026), PDM audit trail en logging.</p>
+          <p>AI Marathon (HvA Applied AI) — Program Lead, multi-stakeholder event programma.</p>
+          <p>SIT (ICT Study Association) — Board Member, events en partnerships.</p>
+        </div>
+      </section>
+
+      <section class="card" data-aos="fade-up">
+        <h2 class="section-title">Contact</h2>
+        <div class="links">
+          <a href="mailto:kh.matin21@gmail.com">kh.matin21@gmail.com</a>
+          <a href="https://www.linkedin.com/in/matin-khajehfard" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </section>
+
+      <footer class="project-meta">
+        Zet je beste repositories vast op GitHub en link ze direct vanuit deze pagina.
+      </footer>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+        once: true,
+        easing: "ease-out-cubic",
+      });
+    </script>
+  </body>
+</html>
