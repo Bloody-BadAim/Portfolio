@@ -1,0 +1,8 @@
+<svg width="520" height="520" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="520" height="520" rx="48" fill="#0f172a" />
+  <circle cx="260" cy="220" r="90" fill="#1e293b" />
+  <rect x="130" y="320" width="260" height="140" rx="70" fill="#1e293b" />
+  <text x="50%" y="90%" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#e2e8f0">
+    Replace with your portrait
+  </text>
+</svg>

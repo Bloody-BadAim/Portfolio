@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+.vercel
+.DS_Store
+public/cv.pdf
+public/images/matin.jpg
