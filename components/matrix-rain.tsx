@@ -36,7 +36,7 @@ export function MatrixRain({ className }: MatrixRainProps) {
       context.setTransform(scale, 0, 0, scale, 0, 0);
       density = width < 640 ? 18 : 14;
       const columnCount = Math.floor(width / density);
-      columns = Array.from({ length: columnCount }).fill(1);
+      columns = new Array<number>(columnCount).fill(1);
     };
 
     const draw = () => {
