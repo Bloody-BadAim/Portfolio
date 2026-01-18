@@ -19,9 +19,9 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "EKB-AI — PDF to Vector Semantic Search",
-    oneLiner: "PDF ingestion and FAISS vector search with page-level traceability and NL↔EN processing.",
-    role: "Owner, end-to-end implementation (ingestion, chunking, retrieval, operations).",
+    title: "EKB AI — PDF to Vector Semantic Search",
+    oneLiner: "PDF ingestion and FAISS vector search with page level traceability and NL↔EN processing.",
+    role: "Owner, end to end implementation (ingestion, chunking, retrieval, operations).",
     stack: [
       "Python",
       "FAISS",
@@ -47,27 +47,24 @@ export const projects: Project[] = [
     role: "Team project (4). Full stack developer (results UI, moderation flows, E2E testing).",
     stack: ["Vue", "Spring Boot", "MySQL", "Render", "Cypress"],
     bullets: [
-      "Built election results exploration (region, party, candidate) and discussion flows with a production-style deployment setup.",
-      "Implemented moderation-ready mechanics (reporting, banning) and Cypress E2E tests for critical user journeys.",
+      "Built election results exploration (region, party, candidate) and discussion flows with a production style deployment setup.",
+      "Implemented moderation ready mechanics (reporting, banning) and Cypress E2E tests for critical user journeys.",
     ],
-    links: [
-      { label: "Repo", note: "Private (available on request)" },
-      { label: "Demo (frontend)", href: "https://frontend-vue-172v.onrender.com" },
-      { label: "Demo (backend)", href: "https://backend-java-1qgh.onrender.com" },
-    ],
-    featured: true,
+  links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Election" }],
+    repo: "https://github.com/Bloody-BadAim/Election",
+    featured: false,
     order: 2,
   },
   {
     title: "Fluor — PDM Audit Trail / Change History (STIBO STEP)",
-    oneLiner: "Event-driven audit trail and change history for enterprise PDM objects in STIBO STEP.",
+    oneLiner: "Event driven audit trail and change history for enterprise PDM objects in STIBO STEP.",
     role: "Internship project owner (business rules, event processing, Web UI views, data model).",
     stack: ["STIBO STEP", "JavaScript business rules", "Event processing", "STEP Web UI"],
     bullets: [
-      "Implemented event-driven change logging with snapshot diff to generate structured audit entries per change event.",
-      "Delivered per-object and aggregated Web UI views to make audits searchable for debugging and traceability.",
+      "Implemented event driven change logging with snapshot diff to generate structured audit entries per change event.",
+      "Delivered per object and aggregated Web UI views to make audits searchable for debugging and traceability.",
     ],
-    links: [{ label: "Repo", note: "Private (available on request)" }],
+    links: [{ label: "Repo", note: "Private" }],
     featured: true,
     order: 3,
   },
@@ -101,12 +98,12 @@ export const projects: Project[] = [
   },
   {
     title: "Code Exchange — Q&A Platform",
-    oneLiner: "Q&A platform concept focused on structured knowledge sharing and moderation-ready UX patterns.",
+    oneLiner: "Q&A platform concept focused on structured knowledge sharing and moderation ready UX patterns.",
     role: "Full stack developer (feature planning and implementation).",
     stack: ["TypeScript", "Vite"],
     bullets: [
-      "Designed Q&A flows with tags and moderation-ready UX patterns to keep information discoverable.",
-      "Implemented core UI screens and data-flow scaffolding to support further backend integration.",
+      "Designed Q&A flows with tags and moderation ready UX patterns to keep information discoverable.",
+      "Implemented core UI screens and data flow scaffolding to support further backend integration.",
     ],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Code-exchange" }],
     repo: "https://github.com/Bloody-BadAim/Code-exchange",

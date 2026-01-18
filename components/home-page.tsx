@@ -169,21 +169,52 @@ export function HomePage() {
           </div>
         </Section>
 
-        <Section id="leadership" className="mt-16">
+               <Section id="leadership" className="mt-16">
           <div className="rounded-3xl border border-border bg-card/90 p-8 shadow-[0_0_0_1px_rgba(45,212,191,0.08)] backdrop-blur">
-            <h2 className="text-2xl font-semibold">Leadership</h2>
-            <p className="mt-3 text-muted-foreground">{profile.leadership.title}</p>
-            <p className="mt-2 text-sm text-muted-foreground">{profile.leadership.details}</p>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl font-semibold">Leadership</h2>
+                <p className="mt-3 text-muted-foreground">{profile.leadership.title}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{profile.leadership.details}</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {profile.leadership.metrics.map((metric) => (
+                  <span
+                    key={metric}
+                    className="rounded-full border border-border bg-background/70 px-3 py-1 text-xs font-semibold text-primary"
+                  >
+                    {metric}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+              {profile.leadership.bullets.map((bullet) => (
+                <li key={bullet} className="flex items-start gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary/70" />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </Section>
 
         <Section id="contact" className="mt-16">
           <div className="flex flex-col gap-6 rounded-3xl border border-border bg-card/90 p-8 shadow-[0_0_0_1px_rgba(45,212,191,0.08)] backdrop-blur md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-2xl font-semibold">Contact</h2>
-              <p className="mt-2 text-muted-foreground">
-                Open for part time roles, hybrid teams, and freelance assignments.
-              </p>
+            <div className="space-y-3">
+              <div>
+                <h2 className="text-2xl font-semibold">Contact</h2>
+                <p className="mt-2 text-muted-foreground">
+                  Open for part time roles, hybrid teams, freelance work, and a 2027 internship.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+                {profile.preferences.map((item) => (
+                  <span key={item} className="rounded-full border border-border px-3 py-1">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
             <div className="flex flex-wrap gap-3">
               <Button asChild>
@@ -202,6 +233,7 @@ export function HomePage() {
             </div>
           </div>
         </Section>
+
 
         <footer className="mt-16 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} Matin Khajehfard. All rights reserved.

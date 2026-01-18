@@ -16,25 +16,61 @@ export function Navbar() {
   const [active, setActive] = useState("proof");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -50% 0px" },
-    );
+    const elements = sections
+      .map((section) => ({
+        id: section.id,
+        element: document.getElementById(section.id),
+      }))
+      .filter(
+        (item): item is { id: string; element: HTMLElement } => Boolean(item.element),
+      );
 
-    sections.forEach((section) => {
-      const element = document.getElementById(section.id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
+    const isNearBottom = () =>
+      window.innerHeight + window.scrollY >= document.body.offsetHeight - 8;
 
-    return () => observer.disconnect();
+    const getActiveByViewport = () => {
+      if (elements.length === 0) return "proof";
+      if (isNearBottom()) return elements[elements.length - 1].id;
+
+      const midline = window.innerHeight * 0.45;
+      let nextActive = elements[0].id;
+      let closest = Number.POSITIVE_INFINITY;
+
+      elements.forEach(({ id, element }) => {
+        const { top, bottom } = element.getBoundingClientRect();
+        if (top <= midline && bottom >= midline) {
+          nextActive = id;
+          closest = 0;
+          return;
+        }
+        const distance = Math.min(Math.abs(top - midline), Math.abs(bottom - midline));
+        if (distance < closest) {
+          closest = distance;
+          nextActive = id;
+        }
+      });
+
+      return nextActive;
+    };
+
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const nextActive = getActiveByViewport();
+        setActive((current) => (current === nextActive ? current : nextActive));
+      });
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -54,10 +90,7 @@ export function Navbar() {
             {section.label}
           </a>
         ))}
-        <span
-          className="ml-2 h-2 w-2 rounded-full bg-primary"
-          aria-hidden
-        />
+        <span className="ml-2 h-2 w-2 rounded-full bg-primary" aria-hidden />
       </div>
     </nav>
   );
