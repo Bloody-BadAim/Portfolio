@@ -3,7 +3,7 @@ export const profile = {
   location: "Hoofddorp, Netherlands",
   roles: ["Software Engineer", "Fullstack Developer", "AI/Automation Engineer"],
   valueProposition:
-    "I build full stack products and AI driven automation with a reliability mindset: Vue/TypeScript frontends, Node/Java APIs, SQL data models, and traceable delivery (logs, audits, tests, evidence).",
+     "Full stack + AI automation engineer building RAG/search pipelines and production grade web systems: Vue/TS, Node/Java, SQL, and observable delivery (audit trails, logs, tests).",
   email: "kh.matin21@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/in/matin-khajehfard",
