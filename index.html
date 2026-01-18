@@ -4,10 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Matin Khajehfard | Fullstack Developer | AI Engineer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      integrity="sha512-b7QpXG7iqrJsl8N8nStMc6kOp+Ybkq1q9j2nC7gE1u4lfVBPuGd9VtGm7H9t3p2x66hg0A3pbyROnA9HNfT3OQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
     <style>
       :root {
         color-scheme: light;
-        --bg: #f8fafc;
+        --bg: #f1f5f9;
         --text: #0f172a;
         --muted: #475569;
         --accent: #0f766e;
@@ -15,6 +26,7 @@
         --card: #ffffff;
         --border: #e2e8f0;
         --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        --glow: 0 0 0 1px rgba(15, 118, 110, 0.15), 0 18px 60px rgba(15, 118, 110, 0.2);
       }
       * {
         box-sizing: border-box;
@@ -22,9 +34,32 @@
       body {
         margin: 0;
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-        background: var(--bg);
+        background: radial-gradient(circle at top, #f8fafc, #e2e8f0 55%, #cbd5f5 100%);
         color: var(--text);
         line-height: 1.6;
+      }
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        z-index: -1;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        filter: blur(40px);
+        opacity: 0.35;
+        animation: float 12s ease-in-out infinite;
+      }
+      body::before {
+        background: #38bdf8;
+        top: -120px;
+        right: -120px;
+      }
+      body::after {
+        background: #34d399;
+        bottom: -160px;
+        left: -120px;
+        animation-delay: -6s;
       }
       main {
         max-width: 960px;
@@ -33,7 +68,7 @@
         display: flex;
         flex-direction: column;
         gap: 48px;
-        animation: page-fade 600ms ease-out both;
+        animation: page-fade 700ms ease-out both;
       }
       header {
         display: flex;
@@ -45,10 +80,40 @@
         flex-direction: column;
         gap: 10px;
       }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 28px;
+        align-items: center;
+      }
       .tagline {
         max-width: 720px;
         color: var(--muted);
         font-size: 1.05rem;
+      }
+      .photo-card {
+        position: relative;
+        border-radius: 24px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        box-shadow: var(--glow);
+        overflow: hidden;
+      }
+      .photo-card img {
+        display: block;
+        width: 100%;
+        border-radius: 18px;
+        object-fit: cover;
+      }
+      .photo-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        pointer-events: none;
+        animation: shimmer 6s linear infinite;
       }
       h1 {
         font-size: 2.6rem;
@@ -135,21 +200,6 @@
         background: linear-gradient(135deg, var(--accent), #38bdf8);
         display: inline-block;
       }
-      .animated {
-        animation: rise-in 600ms ease-out both;
-      }
-      .delay-1 {
-        animation-delay: 120ms;
-      }
-      .delay-2 {
-        animation-delay: 240ms;
-      }
-      .delay-3 {
-        animation-delay: 360ms;
-      }
-      .delay-4 {
-        animation-delay: 480ms;
-      }
       .pill-row {
         display: flex;
         flex-wrap: wrap;
@@ -176,6 +226,11 @@
           padding: 40px 18px 64px;
         }
       }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
       @keyframes page-fade {
         from {
           opacity: 0;
@@ -194,6 +249,26 @@
           transform: translateY(0);
         }
       }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(18px);
+        }
+      }
+      @keyframes shimmer {
+        0% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 0.2;
+        }
+      }
       @media (prefers-reduced-motion: reduce) {
         * {
           animation-duration: 0.01ms !important;
@@ -205,15 +280,20 @@
   </head>
   <body>
     <main>
-      <header class="animated">
-        <div class="hero">
-          <h1>Matin Khajehfard</h1>
-          <p class="role">Fullstack Developer | AI Engineer</p>
-          <p class="tagline">7+ jaar bouwen aan web, AI en automation met focus op traceability, debugbaarheid en shipping.</p>
-          <div class="pill-row">
-            <span class="pill">Hoofddorp, NL</span>
-            <span class="pill">Part-time · Hybrid</span>
-            <span class="pill">Freelance open</span>
+      <header class="animate__animated animate__fadeInDown">
+        <div class="hero-grid">
+          <div class="hero">
+            <h1>Matin Khajehfard</h1>
+            <p class="role">Fullstack Developer | AI Engineer</p>
+            <p class="tagline">7+ jaar bouwen aan web, AI en automation met focus op traceability, debugbaarheid en shipping.</p>
+            <div class="pill-row">
+              <span class="pill">Hoofddorp, NL</span>
+              <span class="pill">Part-time · Hybrid</span>
+              <span class="pill">Freelance open</span>
+            </div>
+          </div>
+          <div class="photo-card" data-aos="zoom-in" data-aos-duration="800">
+            <img src="assets/matin.jpg" alt="Portret van Matin Khajehfard" />
           </div>
         </div>
         <div class="links">
@@ -223,16 +303,16 @@
         </div>
       </header>
 
-      <section class="card animated delay-1">
+      <section class="card" data-aos="fade-up">
         <h2 class="section-title">Proof block</h2>
         <p>Ik bouw fullstack en AI-oplossingen met event-driven logging, traceability en duidelijke systemen.</p>
         <p>Impact: betrouwbare delivery, herleidbare changes en operationele rust voor teams.</p>
       </section>
 
       <section>
-        <h2 class="section-title animated delay-2">Top 3 projecten</h2>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Top 3 projecten</h2>
         <div class="projects">
-          <article class="card animated delay-2">
+          <article class="card" data-aos="fade-up" data-aos-delay="150">
             <h3>PDM Audit Trail / Change History (Fluor)</h3>
             <p class="project-meta">Audit trail pipeline voor PDM-objecten met per-object en aggregated web UI views.</p>
             <span class="stack">Stack: STIBO STEP · JavaScript business rules · Event processing · STEP Web UI</span>
@@ -248,7 +328,7 @@
             </div>
           </article>
 
-          <article class="card animated delay-3">
+          <article class="card" data-aos="fade-up" data-aos-delay="250">
             <h3>AAI EKB (EKB-AI) — PDF-to-Vector Semantic Search</h3>
             <p class="project-meta">PDF ingest pipeline met FAISS vector store en traceable bronnen.</p>
             <span class="stack">Stack: Python · LangChain · FAISS · HuggingFace · pdfplumber · PyTorch</span>
@@ -264,7 +344,7 @@
             </div>
           </article>
 
-          <article class="card animated delay-4">
+          <article class="card" data-aos="fade-up" data-aos-delay="350">
             <h3>VoteVision — Dutch Election Results Viewer</h3>
             <p class="project-meta">Full-stack web app voor verkiezingsresultaten en gemodereerde discussies.</p>
             <span class="stack">Stack: Vue · Java Spring Boot · MySQL · Render · Cypress</span>
@@ -282,7 +362,7 @@
         </div>
       </section>
 
-      <section class="card animated delay-3">
+      <section class="card" data-aos="fade-up">
         <h2 class="section-title">Experience snapshot</h2>
         <div class="snapshot">
           <p>Fluor — Automation Specialist / Software Engineer Intern (2025-2026), PDM audit trail en logging.</p>
@@ -291,7 +371,7 @@
         </div>
       </section>
 
-      <section class="card animated delay-4">
+      <section class="card" data-aos="fade-up">
         <h2 class="section-title">Contact</h2>
         <div class="links">
           <a href="mailto:kh.matin21@gmail.com">kh.matin21@gmail.com</a>
@@ -303,5 +383,13 @@
         Zet je beste repositories vast op GitHub en link ze direct vanuit deze pagina.
       </footer>
     </main>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+        once: true,
+        easing: "ease-out-cubic",
+      });
+    </script>
   </body>
 </html>
