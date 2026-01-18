@@ -19,9 +19,9 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "EKB AI — PDF to Vector Semantic Search",
-    oneLiner: "PDF to FAISS semantic search with traceable sources and multilingual processing.",
-    role: "Builder — pipeline, retrieval logic, and operational guardrails.",
+    title: "EKB-AI — PDF to Vector Semantic Search",
+    oneLiner: "PDF ingestion and FAISS vector search with page-level traceability and NL↔EN processing.",
+    role: "Owner, end-to-end implementation (ingestion, chunking, retrieval, operations).",
     stack: [
       "Python",
       "FAISS",
@@ -33,8 +33,8 @@ export const projects: Project[] = [
       "PyTorch",
     ],
     bullets: [
-      "Extracted text and tables from PDFs and created FAISS vector stores for semantic search with page level traceability.",
-      "Implemented chunking with overlap, configurable retrieval parameters, NL↔EN processing, and incremental updates.",
+      "Extracted text and tables from PDFs and indexed them into FAISS vector stores with source and page traceability.",
+      "Implemented chunking with overlap, configurable retrieval parameters, multilingual NL↔EN processing, and incremental updates.",
     ],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/EKB-AI" }],
     repo: "https://github.com/Bloody-BadAim/EKB-AI",
@@ -43,12 +43,12 @@ export const projects: Project[] = [
   },
   {
     title: "VoteVision — Dutch Election Results Viewer",
-    oneLiner: "Full stack viewer for Dutch election results with discussion flows.",
-    role: "Full stack developer — results UI, moderation flows, and testing.",
+    oneLiner: "Full stack election results explorer with discussion flows and moderation mechanics.",
+    role: "Team project (4). Full stack developer (results UI, moderation flows, E2E testing).",
     stack: ["Vue", "Spring Boot", "MySQL", "Render", "Cypress"],
     bullets: [
-      "Built election results exploration (region, party, candidate) plus discussion flows.",
-      "Implemented moderation-ready mechanics (reporting, banning) and Cypress E2E tests for critical flows.",
+      "Built election results exploration (region, party, candidate) and discussion flows with a production-style deployment setup.",
+      "Implemented moderation-ready mechanics (reporting, banning) and Cypress E2E tests for critical user journeys.",
     ],
     links: [
       { label: "Repo", note: "Private (available on request)" },
@@ -60,12 +60,12 @@ export const projects: Project[] = [
   },
   {
     title: "Fluor — PDM Audit Trail / Change History (STIBO STEP)",
-    oneLiner: "Audit trail and change history pipeline for PDM objects.",
-    role: "Automation Specialist / Software Engineer Intern.",
+    oneLiner: "Event-driven audit trail and change history for enterprise PDM objects in STIBO STEP.",
+    role: "Internship project owner (business rules, event processing, Web UI views, data model).",
     stack: ["STIBO STEP", "JavaScript business rules", "Event processing", "STEP Web UI"],
     bullets: [
-      "Implemented event-driven change logging and snapshot diff to generate structured audit entries.",
-      "Built per object and aggregated Web UI views for searchable audit inspection and debugging.",
+      "Implemented event-driven change logging with snapshot diff to generate structured audit entries per change event.",
+      "Delivered per-object and aggregated Web UI views to make audits searchable for debugging and traceability.",
     ],
     links: [{ label: "Repo", note: "Private (available on request)" }],
     featured: true,
@@ -73,12 +73,12 @@ export const projects: Project[] = [
   },
   {
     title: "Gshop (LucaStars Webshop)",
-    oneLiner: "Course webshop with full-stack modules and auth flows.",
-    role: "Full stack developer — APIs, auth, and testing setup.",
+    oneLiner: "Course webshop with layered API structure, auth flows, and testability setup.",
+    role: "Full stack developer (API structure, auth patterns, testing).",
     stack: ["TypeScript", "Lit", "Express", "MySQL", "JWT", "Vitest"],
     bullets: [
-      "Implemented full-stack modules with shared types and structured API layers.",
-      "Set up JWT auth flows and documentation ready project structure.",
+      "Implemented a maintainable API structure and shared types across modules to keep backend and frontend aligned.",
+      "Implemented JWT auth patterns and reinforced testability via a clean project structure and test tooling.",
     ],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Gshop" }],
     repo: "https://github.com/Bloody-BadAim/Gshop",
@@ -87,12 +87,12 @@ export const projects: Project[] = [
   },
   {
     title: "Dokkie — Shared Expenses",
-    oneLiner: "Event expense tracker with relational data modeling.",
-    role: "Full stack developer — data model and UI flow.",
+    oneLiner: "Shared expenses tracker with relational modeling for events, participants, and payments.",
+    role: "Full stack developer (data model and UI flow).",
     stack: ["TypeScript", "Vite", "MySQL"],
     bullets: [
-      "Designed relational data model for events, participants, and payments.",
-      "Delivered a clean UI flow for creating events and tracking balances.",
+      "Designed a relational data model for events, participants, and payments to keep expense tracking consistent.",
+      "Delivered a clean UI flow for creating events and tracking balances with predictable data handling.",
     ],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Dokkie" }],
     repo: "https://github.com/Bloody-BadAim/Dokkie",
@@ -101,12 +101,12 @@ export const projects: Project[] = [
   },
   {
     title: "Code Exchange — Q&A Platform",
-    oneLiner: "Stack Overflow style platform concept for structured knowledge sharing.",
-    role: "Full stack developer — feature planning and implementation.",
+    oneLiner: "Q&A platform concept focused on structured knowledge sharing and moderation-ready UX patterns.",
+    role: "Full stack developer (feature planning and implementation).",
     stack: ["TypeScript", "Vite"],
     bullets: [
-      "Shaped Q&A flows with tags, moderation-ready UX, and profile features.",
-      "Implemented core UI screens and data flow scaffolding.",
+      "Designed Q&A flows with tags and moderation-ready UX patterns to keep information discoverable.",
+      "Implemented core UI screens and data-flow scaffolding to support further backend integration.",
     ],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Code-exchange" }],
     repo: "https://github.com/Bloody-BadAim/Code-exchange",
