@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDownRight, Download } from "lucide-react";
 import { profile } from "@/content/profile";
-import { projects } from "@/content/projects";
+import { getProjectSlug, projects } from "@/content/projects";
 import { useAnalytics } from "@/lib/use-analytics";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
@@ -19,10 +20,13 @@ export function HomePage() {
   const orderedProjects = [...projects].sort((a, b) => a.order - b.order);
   const featuredProjects = orderedProjects.filter((project) => project.featured);
   const otherProjects = orderedProjects.filter((project) => !project.featured);
+  const showMatrixRain = !shouldReduceMotion;
 
   return (
     <div className="gradient-bg cyber-grid relative min-h-screen bg-background text-foreground">
-      <MatrixRain className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-40 blur-[1px] mix-blend-screen" />
+      {showMatrixRain ? (
+        <MatrixRain className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-30 blur-[1px] mix-blend-screen" />
+      ) : null}
       <div className="mx-auto max-w-6xl px-6 pb-24 pt-10 sm:px-10">
         <div className="flex items-center justify-between">
           <div className="text-sm font-semibold text-muted-foreground">{profile.location}</div>
@@ -37,10 +41,10 @@ export function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
               {profile.roles.join(" · ")}
             </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
+            <h1 className="mt-4 text-5xl font-semibold leading-tight sm:text-6xl">
               {profile.name}
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">{profile.valueProposition}</p>
@@ -115,20 +119,70 @@ export function HomePage() {
         </Section>
 
         <Section id="projects" className="mt-16">
-          <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl font-semibold">Projects</h2>
-            <p className="text-sm text-muted-foreground">Featured work and additional builds.</p>
+          <div className="flex flex-col gap-2">
+            <h2 className="text-2xl font-semibold">Latest work</h2>
+            <p className="text-sm text-muted-foreground">
+              Compact case study snapshots with clear outcomes and implementation notes.
+            </p>
           </div>
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          <div className="mt-6 space-y-4">
             {featuredProjects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
+              <motion.div
+                key={project.title}
+                whileHover={{ y: shouldReduceMotion ? 0 : -4 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur"
+              >
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-semibold">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground">{project.oneLiner}</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                      {project.role}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Button asChild variant="outline">
+                      <Link href={`/projects/${getProjectSlug(project)}`}>View case study</Link>
+                    </Button>
+                    {project.links.map((link) => (
+                      <span key={link.label} className="text-sm font-semibold text-muted-foreground">
+                        {link.href ? (
+                          <a href={link.href} target="_blank" rel="noreferrer">
+                            {link.label}
+                          </a>
+                        ) : (
+                          link.label
+                        )}
+                        {link.note ? <span className="ml-1 text-xs">({link.note})</span> : null}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.stack.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
             ))}
           </div>
           {otherProjects.length ? (
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
-              {otherProjects.map((project) => (
-                <ProjectCard key={project.title} project={project} />
-              ))}
+            <div className="mt-10">
+              <div className="flex items-end justify-between gap-4">
+                <h3 className="text-xl font-semibold">Other builds</h3>
+                <p className="text-sm text-muted-foreground">Additional projects and experiments.</p>
+              </div>
+              <div className="mt-6 grid gap-6 lg:grid-cols-2">
+                {otherProjects.map((project) => (
+                  <ProjectCard key={project.title} project={project} />
+                ))}
+              </div>
             </div>
           ) : null}
         </Section>
@@ -169,7 +223,7 @@ export function HomePage() {
           </div>
         </Section>
 
-               <Section id="leadership" className="mt-16">
+        <Section id="leadership" className="mt-16">
           <div className="rounded-3xl border border-border bg-card/90 p-8 shadow-[0_0_0_1px_rgba(45,212,191,0.08)] backdrop-blur">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
               <div className="max-w-2xl">
@@ -203,7 +257,7 @@ export function HomePage() {
           <div className="flex flex-col gap-6 rounded-3xl border border-border bg-card/90 p-8 shadow-[0_0_0_1px_rgba(45,212,191,0.08)] backdrop-blur md:flex-row md:items-center md:justify-between">
             <div className="space-y-3">
               <div>
-                <h2 className="text-2xl font-semibold">Contact</h2>
+                <h2 className="text-2xl font-semibold">Get in touch</h2>
                 <p className="mt-2 text-muted-foreground">
                   Open for part time roles, hybrid teams, freelance work, and a 2027 internship.
                 </p>

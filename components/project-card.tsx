@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import { ExternalLink, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { Project } from "@/content/projects";
+import { getProjectSlug, type Project } from "@/content/projects";
 
 const OG_SEED = "portfolio";
 
@@ -18,15 +19,35 @@ const getGitHubOgImage = (repoUrl?: string) => {
 
 export function ProjectCard({ project }: { project: Project }) {
   const shouldReduceMotion = useReducedMotion();
-  const coverImage = project.image ?? getGitHubOgImage(project.repo);
+  const router = useRouter();
+  const slug = getProjectSlug(project);
+  // const coverImage = project.image ?? getGitHubOgImage(project.repo);
+
+  const handleNavigate = (event: React.MouseEvent<HTMLElement>) => {
+    const target = event.target as HTMLElement;
+    if (target.closest("a")) return;
+    router.push(`/projects/${slug}`);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      router.push(`/projects/${slug}`);
+    }
+  };
 
   return (
     <motion.article
+      role="button"
+      tabIndex={0}
       whileHover={{ y: shouldReduceMotion ? 0 : -6 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="group overflow-hidden rounded-3xl border border-border bg-card/90 shadow-sm backdrop-blur"
+      onClick={handleNavigate}
+      onKeyDown={handleKeyDown}
+      className="group cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/90 shadow-sm backdrop-blur transition hover:border-primary/40 hover:shadow-[0_0_24px_rgba(45,212,191,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+      aria-label={`View case study for ${project.title}`}
     >
-      {coverImage ? (
+      {/* {coverImage ? (
         <div className="relative h-44 w-full overflow-hidden border-b border-border">
           <Image
             src={coverImage}
@@ -38,7 +59,14 @@ export function ProjectCard({ project }: { project: Project }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
         </div>
-      ) : null}
+      ) : ( */}
+        <div className="relative h-32 w-full border-b border-border bg-gradient-to-br from-background via-background/70 to-primary/10 px-6 py-5">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary/80">
+            Case study
+          </p>
+          <h3 className="mt-3 text-lg font-semibold text-foreground">{project.title}</h3>
+        </div>
+      {/* )} */}
       <div className="p-6">
         <div className="flex items-start justify-between gap-3">
           <div>

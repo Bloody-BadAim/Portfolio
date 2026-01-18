@@ -79,7 +79,7 @@ export function Navbar() {
         {sections.map((section) => (
           <a
             key={section.id}
-            href={`#${section.id}`}
+            href={`/#${section.id}`}
             className={cn(
               "transition-colors",
               active === section.id
