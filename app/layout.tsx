@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import "@fontsource-variable/playfair-display";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],

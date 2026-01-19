@@ -22,7 +22,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "Space Grotesk", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Playfair Display", "serif"],
+        display: ["var(--font-display)", "Playfair Display", '"Playfair Display Variable"', "serif"],
       },
       boxShadow: {
         glow: "0 0 0 1px rgba(56, 189, 248, 0.2), 0 20px 50px rgba(15, 118, 110, 0.25)",
