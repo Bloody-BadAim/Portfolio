@@ -5,20 +5,11 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Lock } from "lucide-react";
 import type { Project } from "@/content/projects";
+import { getGitHubOgImage } from "@/lib/project-media";
 import { Button } from "@/components/ui/button";
 import { MatrixRain } from "@/components/matrix-rain";
 import { Section } from "@/components/section";
 import { ThemeToggle } from "@/components/theme-toggle";
-
-const OG_SEED = "portfolio";
-
-const getGitHubOgImage = (repoUrl?: string) => {
-  if (!repoUrl) return undefined;
-  const match = repoUrl.match(/github\.com\/([^/]+)\/([^/]+)/i);
-  if (!match) return undefined;
-  const [, owner, repo] = match;
-  return `https://opengraph.githubassets.com/${OG_SEED}/${owner}/${repo}`;
-};
 
 export function ProjectCaseStudy({ project }: { project: Project }) {
   const shouldReduceMotion = useReducedMotion();
@@ -64,7 +55,9 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
               Case study
             </p>
-            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">{project.title}</h1>
+            <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+              {project.title}
+            </h1>
             <p className="text-lg text-muted-foreground">{project.oneLiner}</p>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
               {project.role}
@@ -105,7 +98,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
 
         <Section className="mt-16">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl font-semibold">Highlights</h2>
+            <h2 className="font-display text-2xl font-semibold">Highlights</h2>
             <p className="text-sm text-muted-foreground">Key implementation and delivery takeaways.</p>
           </div>
           <motion.div
@@ -129,7 +122,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
 
         <Section className="mt-16">
           <div className="rounded-3xl border border-border bg-card/90 p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold">Results &amp; highlights</h2>
+            <h2 className="font-display text-2xl font-semibold">Results &amp; highlights</h2>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               {results.map((result) => (
                 <li key={result} className="flex items-start gap-2">
@@ -143,7 +136,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
 
         <Section className="mt-16">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl font-semibold">Gallery</h2>
+            <h2 className="font-display text-2xl font-semibold">Gallery</h2>
             <p className="text-sm text-muted-foreground">Screens and references from the build.</p>
           </div>
           {gallery ? (

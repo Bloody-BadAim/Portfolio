@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
+import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: "Matin Khajehfard | Fullstack Developer | AI Engineer",
@@ -44,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl" suppressHydrationWarning>
-      <body>
+      <body className={`${spaceGrotesk.variable} ${playfairDisplay.variable} font-sans`}>
         <Providers>{children}</Providers>
       </body>
     </html>

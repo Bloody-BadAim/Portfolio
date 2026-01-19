@@ -56,7 +56,7 @@ export function MatrixRain({ className }: MatrixRainProps) {
       ctx.fillStyle = "rgba(10, 15, 20, 0.08)";
       ctx.fillRect(0, 0, width, height);
 
-      ctx.fillStyle = "rgba(45, 212, 191, 0.35)";
+      ctx.fillStyle = "rgba(45, 212, 191, 0.25)";
 
       for (let i = 0; i < columns.length; i++) {
         const y = columns[i];

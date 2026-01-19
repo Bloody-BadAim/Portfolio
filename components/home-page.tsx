@@ -1,13 +1,16 @@
+// components/home-page.tsx
 "use client";
-
+import { getProjectSlug } from "@/content/projects";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDownRight, Download } from "lucide-react";
 import { profile } from "@/content/profile";
-import { getProjectSlug, projects } from "@/content/projects";
+import { projects } from "@/content/projects";
 import { useAnalytics } from "@/lib/use-analytics";
 import { Button } from "@/components/ui/button";
+// import { FeaturedProjectsScroll } from "@/components/featured-projects-scroll";
+import { HeroHeadline } from "@/components/hero-headline";
 import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -17,6 +20,7 @@ import { MatrixRain } from "@/components/matrix-rain";
 export function HomePage() {
   const shouldReduceMotion = useReducedMotion();
   useAnalytics();
+
   const orderedProjects = [...projects].sort((a, b) => a.order - b.order);
   const featuredProjects = orderedProjects.filter((project) => project.featured);
   const otherProjects = orderedProjects.filter((project) => !project.featured);
@@ -27,6 +31,7 @@ export function HomePage() {
       {showMatrixRain ? (
         <MatrixRain className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-30 blur-[1px] mix-blend-screen" />
       ) : null}
+
       <div className="mx-auto max-w-6xl px-6 pb-24 pt-10 sm:px-10">
         <div className="flex items-center justify-between">
           <div className="text-sm font-semibold text-muted-foreground">{profile.location}</div>
@@ -35,71 +40,49 @@ export function HomePage() {
 
         <Navbar />
 
-        <header className="mt-12 grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
-          <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-              {profile.roles.join(" · ")}
-            </p>
-            <h1 className="mt-4 text-5xl font-semibold leading-tight sm:text-6xl">
-              {profile.name}
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground">{profile.valueProposition}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild>
-                <a href={`mailto:${profile.email}`}>
-                  Email
-                  <ArrowDownRight size={16} />
-                </a>
-              </Button>
-              <Button asChild variant="outline">
-                <a href={profile.links.linkedin} target="_blank" rel="noreferrer">
-                  LinkedIn
-                  <ArrowDownRight size={16} />
-                </a>
-              </Button>
-              <Button asChild variant="outline">
-                <a href={profile.links.github} target="_blank" rel="noreferrer">
-                  GitHub
-                  <ArrowDownRight size={16} />
-                </a>
-              </Button>
-              <Button asChild variant="ghost">
-                <a href="/cv.pdf" download>
-                  Download CV
-                  <Download size={16} />
-                </a>
-              </Button>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2 text-xs text-muted-foreground">
-              {profile.preferences.map((item) => (
-                <span key={item} className="rounded-full border border-border px-3 py-1">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+        <header className="mt-12 space-y-10">
+          <HeroHeadline profile={profile} />
 
-          <motion.div
-            className="relative mx-auto w-full max-w-sm"
-            initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          >
-            <div className="rounded-[28px] border border-border bg-card/80 p-3 shadow-glow">
-              <Image
-                src="/images/linkedin.jpeg"
-                alt="Portret van Matin Khajehfard"
-                width={520}
-                height={520}
-                className="rounded-[22px] object-cover"
-                priority
-              />
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <p className="text-lg text-muted-foreground">{profile.valueProposition}</p>
+
+            <div className="flex flex-col gap-5 lg:items-end">
+              <div className="flex flex-wrap gap-3 lg:justify-end">
+                <Button asChild>
+                  <a href={`mailto:${profile.email}`}>
+                    Email
+                    <ArrowDownRight size={16} />
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a href={profile.links.linkedin} target="_blank" rel="noreferrer">
+                    LinkedIn
+                    <ArrowDownRight size={16} />
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a href={profile.links.github} target="_blank" rel="noreferrer">
+                    GitHub
+                    <ArrowDownRight size={16} />
+                  </a>
+                </Button>
+                <Button asChild variant="ghost">
+                  <a href="/cv.pdf" download>
+                    Download CV
+                    <Download size={16} />
+                  </a>
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap gap-2 text-xs text-muted-foreground lg:justify-end">
+                {profile.preferences.map((item) => (
+                  <span key={item} className="rounded-full border border-border px-3 py-1">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-          </motion.div>
+          </div>
         </header>
 
         <Section id="proof" className="mt-16">
@@ -119,7 +102,8 @@ export function HomePage() {
         </Section>
 
         <Section id="projects" className="mt-16">
-          <div className="flex flex-col gap-2">
+          {/* <FeaturedProjectsScroll projects={featuredProjects} /> */}
+  <div className="flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Latest work</h2>
             <p className="text-sm text-muted-foreground">
               Compact case study snapshots with clear outcomes and implementation notes.
@@ -173,7 +157,7 @@ export function HomePage() {
             ))}
           </div>
           {otherProjects.length ? (
-            <div className="mt-10">
+            <div className="mt-14">
               <div className="flex items-end justify-between gap-4">
                 <h3 className="text-xl font-semibold">Other builds</h3>
                 <p className="text-sm text-muted-foreground">Additional projects and experiments.</p>
@@ -287,7 +271,6 @@ export function HomePage() {
             </div>
           </div>
         </Section>
-
 
         <footer className="mt-16 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} Matin Khajehfard. All rights reserved.
