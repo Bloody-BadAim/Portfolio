@@ -75,11 +75,11 @@ export function HomePage() {
               </div>
 
               <div className="flex flex-wrap gap-2 text-xs text-muted-foreground lg:justify-end">
-                {profile.preferences.map((item) => (
+                {/* {profile.preferences.map((item) => (
                   <span key={item} className="rounded-full border border-border px-3 py-1">
                     {item}
                   </span>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
@@ -88,9 +88,9 @@ export function HomePage() {
         <Section id="proof" className="mt-16">
           <div className="rounded-3xl border border-border bg-card/90 p-8 shadow-[0_0_0_1px_rgba(45,212,191,0.08)] backdrop-blur">
             <h2 className="text-2xl font-semibold">Proof</h2>
-            <p className="mt-3 text-muted-foreground">
+            {/* <p className="mt-3 text-muted-foreground">
               Recruiter friendly proof with a focus on traceability, reliability, and clear delivery.
-            </p>
+            </p> */}
             <div className="mt-4 grid gap-4 text-sm text-muted-foreground sm:grid-cols-2">
               {profile.differentiators.map((item) => (
                 <div key={item} className="rounded-2xl border border-border bg-background/60 p-4">
