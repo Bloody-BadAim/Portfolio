@@ -31,7 +31,7 @@ export const getProjectSlug = (project: Project | string) => {
 export const projects: Project[] = [
   {
     title: "EKB AI | PDF to Vector Semantic Search",
-    oneLiner: "Semantic PDF search with traceable sources and bilingual NL↔EN retrieval.",
+    oneLiner: "Semantic PDF search with traceable sources and bilingual retrieval.",
     role: "Owner, end to end implementation (ingestion, chunking, retrieval, operations).",
     stack: [
       "Python",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
       "FAISS vector store",
     ],
     results: ["Searchable PDF knowledge base", "Source linked answers for auditability"],
-    gallery: ["/images/EKB.png","/images/EKB2.png"],
+    gallery: ["/images/EKB.png", "/images/EKB2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/EKB-AI" }],
     repo: "https://github.com/Bloody-BadAim/EKB-AI",
     featured: true,
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     ],
     highlights: ["E2E tested flows", "Moderation tooling", "Region/party filters", "Deployment-ready setup"],
     results: ["Reliable election results browsing", "Moderation ready discussion space"],
-    gallery: ["/images/VoteVision.png","/images/VoteVision2.png"],
+    gallery: ["/images/VoteVision.png", "/images/VoteVision2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Election" }],
     repo: "https://github.com/Bloody-BadAim/Election",
     featured: true,
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     ],
     highlights: ["Shared type contracts", "JWT auth flows", "Test ready structure"],
     results: ["Consistent frontend backend contracts"],
-    gallery: ["/images/Gshop.png","/images/Gshop2.png"],
+    gallery: ["/images/Gshop.png", "/images/Gshop2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Gshop" }],
     repo: "https://github.com/Bloody-BadAim/Gshop",
     featured: true,
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     ],
     highlights: ["Relational expense model", "Balance tracking UI", "Predictable data flow"],
     results: ["Clear shared expense visibility"],
-    gallery: ["/images/Dokkie.png","/images/Dokkie2.png"],
+    gallery: ["/images/Dokkie.png", "/images/Dokkie2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Dokkie" }],
     repo: "https://github.com/Bloody-BadAim/Dokkie",
     featured: false,
@@ -142,38 +142,38 @@ export const projects: Project[] = [
     ],
     highlights: ["Tag driven discovery", "Moderation ready UX", "Scaffolded data flows"],
     results: ["Structured knowledge sharing experience"],
-    gallery: ["/images/Codex.png","/images/Codex2.png"],
+    gallery: ["/images/Codex.png", "/images/Codex2.png"],
     links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/Code-exchange" }],
     repo: "https://github.com/Bloody-BadAim/Code-exchange",
     featured: false,
     order: 6,
   },
-{
-  title: "AdvGame | Text based adventure game",
-  oneLiner:
-    "Course team project: browser based text adventure with choice driven progression and a polished animated UI.",
-  role:
-    "Team project (SE Block 3). Developer: game flow/state, UI interactions, and animation integration.",
-  stack: ["JavaScript", "TypeScript", "HTML/CSS", "GSAP", "ESLint", "MkDocs", "CI (GitLab config)"],
-  bullets: [
-    "Built a choice driven flow for a text adventure, structuring scenes and transitions in a maintainable way.",
-    "Integrated UI motion and interaction feedback (animations/transitions) to make the game feel responsive and readable.",
-    "Kept the project developer friendly with TypeScript configuration, linting, and documentation/CI scaffolding.",
-  ],
-  highlights: [
-    "Choice driven flow",
-    "Animated UI",
-    "TypeScript config",
-    "Docs + CI scaffolding",
-  ],
-  results: [
-    "Playable text based adventure prototype",
-    "Reusable structure for scenes/choices and UI transitions",
-  ],
-  gallery: ["/images/Adv.png","/images/Adv2.png"],
-  links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/AdvGame" }],
-  repo: "https://github.com/Bloody-BadAim/AdvGame",
-  featured: false,
-  order: 7,
-},
+  {
+    title: "AdvGame | Text based adventure game",
+    oneLiner:
+      "Course team project: browser based text adventure with choice driven progression and a polished animated UI.",
+    role:
+      "Team project (SE Block 3). Developer: game flow/state, UI interactions, and animation integration.",
+    stack: ["JavaScript", "TypeScript", "HTML/CSS", "GSAP", "ESLint", "MkDocs", "CI (GitLab config)"],
+    bullets: [
+      "Built a choice driven flow for a text adventure, structuring scenes and transitions in a maintainable way.",
+      "Integrated UI motion and interaction feedback (animations/transitions) to make the game feel responsive and readable.",
+      "Kept the project developer friendly with TypeScript configuration, linting, and documentation/CI scaffolding.",
+    ],
+    highlights: [
+      "Choice driven flow",
+      "Animated UI",
+      "TypeScript config",
+      "Docs + CI scaffolding",
+    ],
+    results: [
+      "Playable text based adventure prototype",
+      "Reusable structure for scenes/choices and UI transitions",
+    ],
+    gallery: ["/images/Adv.png", "/images/Adv2.png"],
+    links: [{ label: "Repo", href: "https://github.com/Bloody-BadAim/AdvGame" }],
+    repo: "https://github.com/Bloody-BadAim/AdvGame",
+    featured: false,
+    order: 7,
+  },
 ];

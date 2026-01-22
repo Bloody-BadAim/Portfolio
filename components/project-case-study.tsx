@@ -34,7 +34,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
   };
 
   return (
-    <div className="gradient-bg cyber-grid relative min-h-screen bg-background text-foreground">
+    <div>
       {!shouldReduceMotion ? (
         <MatrixRain className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-25 blur-[1px] mix-blend-screen" />
       ) : null}
@@ -79,7 +79,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
                 <Button key={link.label} asChild variant="outline">
                   <a href={link.href} target="_blank" rel="noreferrer">
                     {link.label}
-                    <ExternalLink size={14}/>
+                    <ExternalLink size={14} />
                   </a>
                 </Button>
               ) : (

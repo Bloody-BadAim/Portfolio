@@ -6,10 +6,8 @@ import { cn } from "@/lib/utils";
 const sections = [
   { id: "proof", label: "Proof" },
   { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
-  { id: "leadership", label: "Leadership" },
-  { id: "contact", label: "Contact" },
+  { id: "references", label: "References" },
 ];
 
 export function Navbar() {
@@ -90,7 +88,15 @@ export function Navbar() {
             {section.label}
           </a>
         ))}
-        <span className="ml-2 h-2 w-2 rounded-full bg-primary" aria-hidden />
+
+        {/* Language Toggle */}
+        <div className="mx-2 h-4 w-px bg-border/50" />
+        <div className="flex items-center gap-1 font-medium">
+          <span className="text-muted-foreground/40 text-xs cursor-pointer hover:text-foreground transition-colors">NL</span>
+          <span className="text-muted-foreground/20 text-xs">/</span>
+          <span className="text-primary text-xs cursor-default">EN</span>
+        </div>
+
       </div>
     </nav>
   );

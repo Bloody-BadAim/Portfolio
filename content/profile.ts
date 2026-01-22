@@ -1,6 +1,5 @@
 export const profile = {
   name: "Matin Khajehfard",
-  location: "Hoofddorp, Netherlands",
   roles: ["Software Engineer", "Fullstack Developer", "AI/Automation Engineer"],
   valueProposition:
     "I ship full stack products and AI driven automation with a reliability mindset:" +

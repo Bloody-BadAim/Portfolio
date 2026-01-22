@@ -24,7 +24,7 @@ export function MatrixRain({ className }: MatrixRainProps) {
     let columns: number[] = [];
     let width = 0;
     let height = 0;
-    let density = 14;
+    let density = 24;
     let isRunning = true;
 
     const chars = "アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789";
@@ -41,7 +41,7 @@ export function MatrixRain({ className }: MatrixRainProps) {
 
       ctx.setTransform(scale, 0, 0, scale, 0, 0);
 
-      density = width < 640 ? 18 : 14;
+      density = width < 640 ? 24 : 14;
       const columnCount = Math.max(1, Math.floor(width / density));
       columns = new Array<number>(columnCount).fill(1);
 

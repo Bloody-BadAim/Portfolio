@@ -20,17 +20,17 @@ type HeroProfile = {
 
 export function HeroHeadline({ profile }: { profile: HeroProfile }) {
   const shouldReduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
 
   const portraitY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    shouldReduceMotion ? [0, 0] : [0, -24],
+    scrollY,
+    [0, 600],
+    shouldReduceMotion ? [0, 0] : [0, -60],
   );
 
   const rolesLabel = profile.roles.join(" | ");
-  const subtitle =
-    profile.roles.length >= 2 ? `${profile.roles[0]} / ${profile.roles[1]}` : profile.roles[0];
+  // const subtitle =
+  //   profile.roles.length >= 2 ? `${profile.roles[0]} / ${profile.roles[1]}` : profile.roles[0];
 
   return (
     <section className="relative overflow-hidden rounded-[44px] border border-border bg-card/40 shadow-[0_40px_120px_rgba(15,23,42,0.35)] backdrop-blur">
@@ -39,33 +39,27 @@ export function HeroHeadline({ profile }: { profile: HeroProfile }) {
 
       <div className="relative z-10 p-8 pb-28 sm:p-10 sm:pb-32 lg:p-12 lg:pb-36">
         <div className="flex items-center justify-between gap-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-primary/70">
+          <p className="text-[17px] font-medium uppercase tracking-[0.35em] text-primary/70">
             {rolesLabel}
           </p>
-          <Button asChild size="sm" variant="outline" className="rounded-full">
-            <a href={`mailto:${profile.email}`}>
-              Get in touch
-              <ArrowRight size={14} />
-            </a>
-          </Button>
         </div>
 
         <motion.div
           style={{ y: portraitY }}
-          className="relative mx-auto mt-10 flex h-[260px] w-[260px] items-center justify-center sm:h-[320px] sm:w-[320px] lg:h-[380px] lg:w-[380px]"
+          className="relative mx-auto mt-4 flex h-[300px] w-[300px] items-center justify-center sm:h-[400px] sm:w-[400px] lg:h-[440px] lg:w-[440px]"
         >
           <div className="absolute inset-0 rounded-full bg-primary/15 blur-3xl" />
-          <div className="relative h-full w-full overflow-hidden rounded-full border border-border bg-card/60 p-2">
+          <div className="relative h-full w-full overflow-hidden rounded-full border border-border bg-card/60 p-1">
             <div className="relative h-full w-full overflow-hidden rounded-full">
               <Image
-                src="/images/linkedin.jpeg"
+                src="/images/linkedin.png"
                 alt="Portrait"
                 fill
                 priority
-                sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 380px"
+                sizes="(max-width: 640px) 300px, (max-width: 1024px) 400px, 440px"
                 className="object-cover grayscale contrast-125"
               />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(0,0,0,0.65)_85%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.4)_100%)]" />
             </div>
           </div>
         </motion.div>
@@ -82,7 +76,7 @@ export function HeroHeadline({ profile }: { profile: HeroProfile }) {
           </Button>
         </div>
 
-        <h1 className="pointer-events-none mt-4 font-display text-[clamp(3.5rem,10vw,7.5rem)] font-semibold leading-[0.85] tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground via-foreground to-primary/60 lg:text-[clamp(4rem,12vw,9rem)]">
+        <h1 className="pointer-events-none mt-4 text-center font-display text-[clamp(3.5rem,10vw,7.5rem)] font-semibold leading-[0.95] pb-4 text-transparent bg-clip-text bg-gradient-to-b from-foreground via-foreground to-primary/60 lg:text-[clamp(4rem,12vw,9rem)]">
           {profile.name.toUpperCase()}
         </h1>
       </div>
