@@ -345,7 +345,12 @@ export async function GET() {
       },
     });
   } catch (error) {
-    console.error("Error generating PowerPoint:", error);
-    return NextResponse.json({ error: "Failed to generate PowerPoint" }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorStack = error instanceof Error ? error.stack : undefined;
+    console.error("Error generating PowerPoint:", errorMessage, errorStack);
+    return NextResponse.json(
+      { error: "Failed to generate PowerPoint", details: errorMessage },
+      { status: 500 }
+    );
   }
 }
