@@ -2,7 +2,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDownRight, Download } from "lucide-react";
+import { ArrowDownRight, Download, Presentation } from "lucide-react";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { useAnalytics } from "@/lib/use-analytics";
@@ -90,6 +90,12 @@ export function HomePage() {
                   <a href="/cv.pdf" download>
                     Download CV
                     <Download size={16} />
+                  </a>
+                </Button>
+                <Button asChild variant="ghost">
+                  <a href="/api/generate-ppt">
+                    PowerPoint
+                    <Presentation size={16} />
                   </a>
                 </Button>
               </div>
